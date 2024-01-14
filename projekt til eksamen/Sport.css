@@ -1,0 +1,249 @@
+@media screen and (min-width: 430px) and (max-width: 930px) {
+body {
+background-color: #2d2828;
+overflow-x: hidden; } 
+
+.Header {
+position: relative;
+background-color: #222020;
+height: 150px;    
+bottom: 70px;
+width: 1000px;
+right: 30px;}
+
+.footer {
+position: relative;
+background-color: #222020;
+height: 150px;    
+top: 800px;
+width: 1000px;
+right: 30px;}
+    
+.Sport {
+position: relative;
+top: 250px;
+left: 190px;
+color: white;
+font-size: 70px; }
+
+.navbar {display: none;}
+
+ /*0-1-0-1*/
+ main#carousel {
+position: relative;
+left: 80px;
+top: 200px;    
+width: 100vw; /* Fuldt viewport bredde */
+ height: 500px; /* Fastsat højde */
+transform-style: preserve-3d; /* Bevar 3D transformation */
+perspective: 600px; /* Perspektiv af 3D transformation */
+--items: 4; /* Antal elementer i carousel */
+--middle: 3; /* Midterste element */
+pointer-events: none; /* Ignorer klik på dette element */ }
+    
+
+/*0-0-1-1*/
+div.item {
+position: absolute; 
+width: 300px; /* Fastsat bredde */
+height: 400px; /* Fastsat højde */
+--r: calc(var(--position) - var(--offset)); /* Beregning af rotation baseret på position og offset */
+--abs: max(calc(var(--r) * -1), var(--r)); /* Beregning af absolutværdi af rotation */
+transition: all 0.25s linear; /* Overgangseffekt for alle egenskaber */
+transform: rotateY(calc(-10deg * var(--r))) translateX(calc(-300px * var(--r))); /* 3D rotation og translation */
+z-index: calc((var(--position) - var(--abs))); /* Z-index baseret på position og absolutværdi */ }
+    
+/* Styling for each individual carousel item based on its order */
+/*0-0-2-1*/
+div.item:nth-of-type(1) { --offset: 1; }
+div.item:nth-of-type(2) { --offset: 2; }
+div.item:nth-of-type(3) { --offset: 3; }
+div.item:nth-of-type(4) { --offset: 4; }
+    
+/* Styling for radio input buttons and their checked states */
+/*0-0-1-1*/
+input:nth-of-type(1) {
+position: relative; /* Relativ positionering i forhold til standardposition */
+grid-column: 2 / 3; /* Kolonnespænding i grid */
+grid-row: 2 / 3; /* Rækkespænding i grid */
+left: 80px; /* Afstand fra venstre side */
+top: 690px; /* Afstand fra bunden */ }
+    
+/*0-1-2-2*/
+input:nth-of-type(1):checked ~ main#carousel { --position: 1; } /* Opdater carousel position ved checked tilstand */
+    
+/*0-0-1-1*/
+input:nth-of-type(2) {
+position: relative;
+grid-column: 3 / 4;
+grid-row: 2 / 3;
+left: 110px;
+top: 690px; }
+    
+/*0-1-2-2*/
+input:nth-of-type(2):checked ~ main#carousel { --position: 2; }
+    
+/*0-0-1-1*/
+input:nth-of-type(3) {
+position: relative;
+grid-column: 4 / 5;
+grid-row: 2 / 3;
+left: 155px;
+top: 690px; }
+
+/*0-1-2-2*/    
+input:nth-of-type(3):checked ~ main#carousel { --position: 3; }
+    
+/*0-0-1-1*/
+input:nth-of-type(4) {
+position: relative;
+grid-column: 5 / 6;
+grid-row: 2 / 3;
+left: 200px;
+top: 690px; }
+    
+/*0-1-2-2*/
+input:nth-of-type(4):checked ~ main#carousel { --position: 4; }
+
+.Logo {
+position: relative;
+bottom: 140px; 
+left: 30px;}
+
+.burgermenu {
+position: relative;
+left: 420px;
+bottom: 210px; }
+
+.Privatlivspolitik {
+position: relative;
+text-decoration: none;
+color: white;
+top: 650px;
+left: 20px; }
+
+}
+
+/*Specificity*/
+
+@media only screen and (min-width: 1440px) and (min-height: 1024px) {
+body { 
+background-color: #2d2828; 
+overflow-x: hidden;
+margin: 0px; 
+display: grid;
+align-items: center;
+justify-items: center; }
+
+.burgermenu {display: none;} 
+        
+.Header {
+position: relative;
+bottom: 500px;
+width: 2230px;
+background-color: #222020;
+height: 300px;
+right: 10px;}
+    
+.Sport {
+position: relative;
+top: 230px;
+left: 930px;
+color: white;
+font-size: 100px; }
+    
+.Logo {
+position: relative;
+bottom: 150px; 
+left: 20px;}
+    
+.navbar a {
+position: relative;
+bottom: 230px;
+float: right;
+display: block;
+font-size: 40px;
+color: white;
+text-align: center;
+padding: 14px 16px;
+right: 130px;
+text-decoration: none;
+object-fit: cover; 
+font-family: inter, sans-serif; }
+                  
+.navbar a:hover {color: #556E53;}
+/* Styling af hovedkarusellen */
+main#carousel {
+position: relative; /* Position relativ til det nærmeste positionerede forældrelement */
+top: 480px; /* Afstand fra toppen af forældrelementet */
+right: 190px; /* Afstand fra højre side af forældrelementet */
+grid-row: 1 / 2; /* Grid rækkeposition fra 1 til 2 */
+grid-column: 1 / 8; /* Grid kolonneposition fra 1 til 8 */
+width: 100vw; /* Bredde er 100% af viewport bredde */
+height: 500px; /* Fast højde på 500 pixels */
+display: flex; /* Brug flex layout */
+align-items: center; /* Centrer elementer langs tværgående akse */
+justify-content: center; /* Centrer elementer langs hovedakse */
+perspective: 600px; /* Perspektiv for 3D-transformations-effekter */
+pointer-events: none; /* Ignorer musehændelser på dette element og dets børn */ }
+
+/* Styling af hvert billedobjekt i karusellen */
+div.item {
+position: absolute; /* Position relativ til det nærmeste positionerede forældrelement */
+width: 300px; /* Fast bredde på 300 pixels */
+height: 400px; /* Fast højde på 400 pixels */
+--r: calc(var(--position) - var(--offset)); /* CSS variabel for rotationsværdi */
+transition: all 0.25s linear; /* Overgangseffekt for alle egenskaber med 0.25 sekunders varighed */
+transform: rotateY(calc(-10deg * var(--r))) translateX(calc(-300px * var(--r))); /* 3D-rotation og translationseffekter */ }
+
+/* Opsætning af offset for hvert individuelt billedobjekt */
+div.item:nth-of-type(1) {--offset: 1;} /* CSS variabel for offset for det første element */
+div.item:nth-of-type(2) {--offset: 2; } /* CSS variabel for offset for det andet element */
+div.item:nth-of-type(3) {--offset: 3; } /* CSS variabel for offset for det tredje element */
+div.item:nth-of-type(4) {--offset: 4; } /* CSS variabel for offset for det fjerde element */
+
+/* Styling af inputpunkter til at skifte positionen af karusellen */
+input:nth-of-type(1) {
+position: relative; /* Position relativ til det nærmeste positionerede forældrelement */
+top: 340px; /* Afstand fra toppen af forældrelementet */
+right: 1300px; /* Afstand fra højre side af forældrelementet */ }
+
+input:nth-of-type(1):checked ~ main#carousel {--position: 1; } /* Opdater position CSS variabel, når input er markeret */
+
+input:nth-of-type(2) {
+position: relative; /* Position relativ til det nærmeste positionerede forældrelement */
+right: 1270px; /* Afstand fra højre side af forældrelementet */
+top: 340px; /* Afstand fra toppen af forældrelementet */ }
+
+input:nth-of-type(2):checked ~ main#carousel {--position: 2; } /* Opdater position CSS variabel, når input er markeret */
+
+input:nth-of-type(3) {
+position: relative; /* Position relativ til det nærmeste positionerede forældrelement */
+top: 338px; /* Afstand fra toppen af forældrelementet */
+right: 1240px; /* Afstand fra højre side af forældrelementet */ }
+
+input:nth-of-type(3):checked ~ main#carousel {--position: 3; } /* Opdater position CSS variabel, når input er markeret */
+
+input:nth-of-type(4) {
+position: relative; /* Position relativ til det nærmeste positionerede forældrelement */
+top: 338px; /* Afstand fra toppen af forældrelementet */
+right: 1200px; /* Afstand fra højre side af forældrelementet */ }
+
+input:nth-of-type(4):checked ~ main#carousel {--position: 4;} /* Opdater position CSS variabel, når input er markeret */
+
+.footer {
+position: relative;
+top: 730px;
+width: 2230px;
+background-color: #222020;
+height: 300px;
+right: 10px;}
+    
+.Privatlivspolitik {
+position: relative;
+text-decoration: none;
+color: white;
+top: 430px;
+left: 20px; }
+        
+} /*End tag til media query computer*/
